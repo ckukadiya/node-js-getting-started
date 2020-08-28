@@ -1,0 +1,428 @@
+{
+  "posts": [
+    { "id": 1, "title": "Post 1" },
+    { "id": 2, "title": "Post 2" },
+    { "id": 3, "title": "Post 3" }
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 },
+    { "id": 2, "body": "some comment", "postId": 1 }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "schema": {
+  "id": 1,
+  "schema": {
+    "schemas": [
+      {
+        "name": "error",
+        "attributes": [
+          {
+            "name": "message",
+            "type": "string"
+          },
+          {
+            "name": "severity",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "heartbeat",
+        "attributes": [
+          {
+            "name": "appLoadTime",
+            "type": "date"
+          },
+          {
+            "name": "hasFocus",
+            "type": "boolean"
+          },
+          {
+            "name": "heartbeatFrequency",
+            "type": "number"
+          },
+          {
+            "name": "heartbeatInactivityTimeout",
+            "type": "number"
+          },
+          {
+            "name": "totalTime",
+            "type": "number"
+          }
+        ]
+      },
+      {
+        "name": "log",
+        "attributes": [
+          {
+            "name": "eventName",
+            "type": "string"
+          },
+          {
+            "name": "level",
+            "type": "string"
+          },
+          {
+            "name": "message",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "navigation",
+        "attributes": [
+          {
+            "name": "element",
+            "type": "string"
+          },
+          {
+            "name": "eventName",
+            "type": "string"
+          },
+          {
+            "name": "pageName",
+            "type": "string"
+          },
+          {
+            "name": "section",
+            "type": "string"
+          },
+          {
+            "name": "url",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "shared",
+        "attributes": [
+          {
+            "name": "wmukid",
+            "type": "string"
+          },
+          {
+            "name": "appId",
+            "type": "string"
+          },
+          {
+            "name": "timestamp",
+            "type": "string"
+          },
+          {
+            "name": "eventType",
+            "type": "string"
+          },
+          {
+            "name": "eventName",
+            "type": "string"
+          },
+          {
+            "name": "userId",
+            "type": "number"
+          },
+          {
+            "name": "companyName",
+            "type": "string"
+          },
+          {
+            "name": "brand",
+            "type": "string"
+          },
+          {
+            "name": "productName",
+            "type": "string"
+          },
+          {
+            "name": "applicationName",
+            "type": "string"
+          },
+          {
+            "name": "domain",
+            "type": "string"
+          },
+          {
+            "name": "userAgent",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "context",
+        "attributes": [
+          {
+            "name": "sourceIp",
+            "type": "string"
+          },
+          {
+            "name": "userAgent",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "library",
+        "attributes": [
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "version",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "device",
+        "attributes": [
+          {
+            "name": "type",
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "model",
+            "type": "string"
+          },
+          {
+            "name": "osName",
+            "type": "string"
+          },
+          {
+            "name": "osVersion",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "userProperties",
+        "attributes": [
+          {
+            "name": "wmhhid",
+            "type": "string"
+          },
+          {
+            "name": "wminid",
+            "type": "string"
+          }
+        ]
+      }
+    ],
+    "events": [
+      {
+        "name": "appLoad",
+        "eventSchemas": []
+      },
+      {
+        "name": "click",
+        "eventSchemas": [
+          {
+            "name": "navigation",
+            "attributes": [
+              {
+                "name": "element"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "fatalError",
+        "eventSchemas": [
+          {
+            "name": "error",
+            "attributes": [
+              {
+                "name": "message",
+                "required": true
+              },
+              {
+                "name": "severity",
+                "required": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "heartbeat",
+        "eventSchemas": [
+          {
+            "name": "heartbeat",
+            "attributes": [
+              {
+                "name": "appLoadTime"
+              },
+              {
+                "name": "hasFocus"
+              },
+              {
+                "name": "heartbeatFrequency"
+              },
+              {
+                "name": "heartbeatInactivityTimeout"
+              },
+              {
+                "name": "totalTime"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "log",
+        "eventSchemas": [
+          {
+            "name": "log",
+            "attributes": [
+              {
+                "name": "eventName"
+              },
+              {
+                "name": "level",
+                "required": true
+              },
+              {
+                "name": "message",
+                "required": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "successfulLogin",
+        "eventSchemas": [
+          {
+            "name": "navigation",
+            "attributes": [
+              {
+                "name": "pageName",
+                "required": true
+              },
+              {
+                "name": "section"
+              },
+              {
+                "name": "url",
+                "required": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "track",
+        "eventSchemas": [
+          {
+            "name": "navigation",
+            "attributes": [
+              {
+                "name": "eventName",
+                "required": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "shared",
+        "eventSchemas": [
+          {
+            "name": "shared",
+            "attributes": [
+              {
+                "name": "wmukid",
+                "required": true
+              },
+              {
+                "name": "appId",
+                "required": true
+              },
+              {
+                "name": "timestamp"
+              },
+              {
+                "name": "eventType"
+              },
+              {
+                "name": "eventName"
+              },
+              {
+                "name": "companyName"
+              },
+              {
+                "name": "eventId"
+              },
+              {
+                "name": "brand"
+              },
+              {
+                "name": "domain"
+              },
+              {
+                "name": "userAgent"
+              }
+            ]
+          },
+          {
+            "name": "context",
+            "attributes": [
+              {
+                "name": "userAgent"
+              }
+            ]
+          },
+          {
+            "name": "library",
+            "attributes": [
+              {
+                "name": "name"
+              },
+              {
+                "name": "version"
+              }
+            ]
+          },
+          {
+            "name": "device",
+            "attributes": [
+              {
+                "name": "type"
+              },
+              {
+                "name": "name"
+              },
+              {
+                "name": "model"
+              },
+              {
+                "name": "osName"
+              },
+              {
+                "name": "osVersion"
+              }
+            ]
+          },
+          {
+            "name": "userProperties",
+            "attributes": [
+              {
+                "name": "wmhhid"
+              },
+              {
+                "name": "wminid"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+}
