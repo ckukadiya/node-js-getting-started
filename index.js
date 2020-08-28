@@ -1,4 +1,4 @@
-const PORT = process.env.PORT || 5000
+/*const PORT = process.env.PORT || 5000
 const jsonServer = require('json-server')
 const server = jsonServer.create()
 
@@ -28,4 +28,16 @@ server.use((req, res, next) => {
 server.use(router)
 server.listen(PORT, () => {
   console.log('JSON Server is running')
-})
+}) */
+
+const express = require('express')
+const path = require('path')
+const PORT = process.env.PORT || 5000
+
+express()
+  .use(express.static(path.join(__dirname, 'public')))
+  .set('views', path.join(__dirname, 'views'))
+  .set('view engine', 'ejs')
+  .get('/', (req, res) => res.render('pages/index'))
+  .post('/api/doppler', (req, res) => res.json(req.query))
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
